@@ -1,0 +1,19 @@
+{
+  "name": "eloquent-javascript-3rd",
+  "version": "1.0.0",
+  "description": "Exercises from Eloquent JavaScript 3rd Edition",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9andresc/eloquent-javascript-3rd.git"
+  },
+  "author": "9andresc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/9andresc/eloquent-javascript-3rd/issues"
+  },
+  "homepage": "https://github.com/9andresc/eloquent-javascript-3rd#readme"
+}
