@@ -1,0 +1,48 @@
+<!-- File Fields -->
+
+<input type="file" id="singular" />
+
+<input type="file" id="multiple" multiple />
+
+<script>
+  function readFileText(file) {
+    return new Promise(function cb(resolve, reject) {
+      let reader = new FileReader()
+
+      reader.addEventListener('load', function onLoad() {
+        resolve(reader.result)
+      })
+      reader.addEventListener('error', function onError() {
+        reject(reader.error)
+      })
+      reader.readAsText(file)
+    })
+  }
+
+  let singularInput = document.querySelector('#singular')
+
+  singularInput.addEventListener('change', function onChange() {
+    if (singularInput.files.length > 0) {
+      let file = singularInput.files[0]
+
+      console.log(`You chose ${file.name}`)
+
+      if (file.type) console.log(`It has type ${file.type}`)
+    }
+  })
+
+  let multipleInput = document.querySelector('#multiple')
+
+  multipleInput.addEventListener('change', function onChange() {
+    for (let file of Array.from(multipleInput.files)) {
+      let reader = new FileReader()
+
+      reader.addEventListener('load', function onLoad() {
+        console.log(
+          `File ${file.name} starts with ${reader.result.slice(0, 20)}`
+        )
+      })
+      reader.readAsText(file)
+    }
+  })
+</script>

@@ -1,0 +1,24 @@
+<!-- Checkboxes and radio buttons -->
+
+<label><input type="checkbox" id="purple" /> Make this page purple</label>
+
+Color:
+<label><input type="radio" name="color" value="orange" /> Orange</label>
+<label><input type="radio" name="color" value="lightgreen" /> Green</label>
+<label><input type="radio" name="color" value="lightblue" /> Blue</label>
+
+<script>
+  let checkbox = document.querySelector('#purple')
+
+  checkbox.addEventListener('change', function onChange() {
+    document.body.style.backgroundColor = checkbox.checked ? 'mediumpurple' : ''
+  })
+
+  let buttons = document.querySelectorAll('[name=color]')
+
+  for (let button of Array.from(buttons)) {
+    button.addEventListener('change', function onChange() {
+      document.body.style.backgroundColor = button.value
+    })
+  }
+</script>
